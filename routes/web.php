@@ -10,6 +10,7 @@ Route::post('/index', [\App\Http\Controllers\PPDBController::class,'store'])->na
 
 
 Route::group(['middleware' => 'auth'], function() {
+    Route::resource('admin/jadwal', App\Http\Controllers\Admin\JadwalController::class);
     Route::get('/datasiswa', [\App\Http\Controllers\CalonsiswaController::class,'index']);
     Route::get('/biodata', [\App\Http\Controllers\BiodataController::class,'index']);
     Route::post('/biodata/{users}', [\App\Http\Controllers\BiodataController::class,'store']);
